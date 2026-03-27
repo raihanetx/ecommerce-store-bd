@@ -579,14 +579,11 @@ export default function Shop({ setView, addToCart, onCategoryClick }: ShopProps)
                         className="bg-white p-3 relative cursor-pointer transition-all duration-300 flex flex-col w-full min-h-[230px] md:min-h-[260px] border border-gray-200 rounded-xl hover:border-[#16a34a] group"
                       >
                         {hasDiscount && (
-                          <motion.span 
-                            className="absolute top-2 left-2 bg-red-500 text-white text-[9px] md:text-[10px] font-bold px-2 py-0.5 rounded z-10"
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            transition={{ type: 'spring', stiffness: 500, damping: 15, delay: index * 0.02 }}
+                          <span 
+                            className="absolute top-0 left-0 bg-[#ff4757] text-white text-[10px] font-bold px-2 py-0.5 rounded-br-lg z-10"
                           >
                             {maxSavings > 0 ? `TK ${maxSavings} OFF` : `-${bestDiscountPercent}%`}
-                          </motion.span>
+                          </span>
                         )}
                         <div className="flex-grow flex items-center justify-center py-2">
                           <motion.div 
