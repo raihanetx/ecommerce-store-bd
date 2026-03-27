@@ -389,7 +389,7 @@ export default function Shop({ setView, addToCart, onCategoryClick }: ShopProps)
               </h2>
               {settings.secondSectionSlogan && <p className="text-gray-500 mt-0.5 text-xs md:text-sm font-bangla">{settings.secondSectionSlogan}</p>}
             </div>
-            <div className="flex gap-3 overflow-x-auto no-scrollbar pb-2 px-4 content-fade-in-stagger">
+            <div className="flex gap-4 md:gap-6 lg:gap-8 xl:gap-10 overflow-x-auto no-scrollbar pb-4 px-4 md:px-8 lg:px-10 xl:px-12 content-fade-in-stagger">
               {offerProducts.map((product) => {
                     // Get variants from variantMap to find actual discount
                     const productVariants = variantMap[product.id] || []
@@ -441,7 +441,7 @@ export default function Shop({ setView, addToCart, onCategoryClick }: ShopProps)
                     return (
                       <div 
                         key={product.id} 
-                        className="flex-shrink-0 w-[200px] h-[90px] md:w-[250px] md:h-[100px] bg-white rounded-lg flex relative border border-gray-200 overflow-hidden cursor-pointer hover:border-[#16a34a] transition-all"
+                        className="flex-shrink-0 w-[180px] h-[100px] md:w-[220px] md:h-[110px] bg-white rounded-lg flex relative border border-gray-200 overflow-hidden cursor-pointer hover:border-[#16a34a] transition-all"
                         onClick={() => handleProductClick(product.id, product.name)}
                       >
                         {/* Corner Offer Badge */}
@@ -451,8 +451,8 @@ export default function Shop({ setView, addToCart, onCategoryClick }: ShopProps)
                           </div>
                         )}
                         
-                        {/* Left Side: Image (40%) */}
-                        <div className="w-[38%] h-full bg-[#fbfbfc] flex justify-center items-center p-1 border-r border-gray-100">
+                        {/* Left Side: Image (45%) - No background, no divider */}
+                        <div className="w-[45%] h-full flex justify-center items-center p-2">
                           <img 
                             src={product.image} 
                             alt={product.name} 
@@ -461,8 +461,8 @@ export default function Shop({ setView, addToCart, onCategoryClick }: ShopProps)
                           />
                         </div>
                         
-                        {/* Right Side: Content (62%) */}
-                        <div className="w-[62%] p-2 flex flex-col justify-center">
+                        {/* Right Side: Content (55%) */}
+                        <div className="w-[55%] p-2 flex flex-col justify-center">
                           {/* Category */}
                           <span className="text-[9px] text-slate-400 uppercase font-semibold mb-0.5 tracking-wide">
                             {product.category || 'Product'}
